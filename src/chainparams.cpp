@@ -53,8 +53,8 @@ public:
         pchMessageStart[2] = 0x22;
         pchMessageStart[3] = 0x05;
         vAlertPubKey = ParseHex("0486bce1bac0d543f104cbff2bd23680056a3b9ea05e1137d2ff90eeb5e08472eb500322593a2cb06fbf8297d7beb6cd30cb90f98153b5b7cce1493749e41e0284");
-        nDefaultPort = 15714;
-        nRPCPort = 15715;
+        nDefaultPort = 16714;
+        nRPCPort = 16715;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
 
         // Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -120,7 +120,7 @@ public:
 	assert(hashGenesisBlock ==       uint256("00000aba166cc8d3a5575db78dd1f0a8e74dfd7531d330cd1595a104f641fc88"));
         assert(genesis.hashMerkleRoot == uint256("0xf1cde99d4ccfd3bab235232b48261dc907a4bcc5a0231f1f2dc47a6c0519aa0c"));
 
-        vSeeds.push_back(CDNSSeedData("iadix.com","coin2.iadix.com"));
+        vSeeds.push_back(CDNSSeedData("iadix.com","coin.iadix.com"));
 //      vSeeds.push_back(CDNSSeedData("syllabear.tk", "bcseed.syllabear.tk"));
 
         base58Prefixes[PUBKEY_ADDRESS] = list_of(25);
