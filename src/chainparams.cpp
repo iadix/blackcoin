@@ -53,8 +53,8 @@ public:
         pchMessageStart[2] = 0x22;
         pchMessageStart[3] = 0x05;
         vAlertPubKey = ParseHex("0486bce1bac0d543f104cbff2bd23680056a3b9ea05e1137d2ff90eeb5e08472eb500322593a2cb06fbf8297d7beb6cd30cb90f98153b5b7cce1493749e41e0284");
-        nDefaultPort = 16714;
-        nRPCPort = 16715;
+        nDefaultPort = 15714;
+        nRPCPort = 15715;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
 
         // Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -79,15 +79,45 @@ public:
         genesis.nVersion = 1;
         genesis.nTime    = 1466419085;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 156475;
+        genesis.nNonce   = 579883;
 
         hashGenesisBlock = genesis.GetHash();
 
+	/*
 	printf("d:%x\n", genesis.nBits); 
 	printf("h:%s\n", hashGenesisBlock.ToString().c_str()); 
         printf("m:%s\n", genesis.hashMerkleRoot.ToString().c_str()); 
+
+
+ // If genesis block hash does not match, then generate new genesis hash.
+        printf("Searching for genesis block...\n");
+        // This will figure out a valid hash and Nonce if you're
+        // creating a different genesis block:
+        uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
+        uint256 thash;
+
+        while(true)
+        {
+            thash = scrypt_blockhash(BEGIN(genesis.nVersion));
+            if (thash <= hashTarget)
+                break;
+            if ((genesis.nNonce & 0xFFF) == 0)
+            {
+                printf("nonce %08X: hash = %s (target = %s)\n", genesis.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
+            }
+            ++genesis.nNonce;
+            if (genesis.nNonce == 0)
+            {
+                printf("NONCE WRAPPED, incrementing time\n");
+                ++genesis.nTime;
+            }
+        }
+        printf("block.nTime = %u \n", genesis.nTime);
+        printf("block.nNonce = %u \n", genesis.nNonce);
+        printf("block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+	*/
         
-	assert(hashGenesisBlock ==       uint256("0xafc381b7338232c7d0bce0079cc918d328feb97dc98038cb7e294c7e6a690054"));
+	assert(hashGenesisBlock ==       uint256("00000aba166cc8d3a5575db78dd1f0a8e74dfd7531d330cd1595a104f641fc88"));
         assert(genesis.hashMerkleRoot == uint256("0xf1cde99d4ccfd3bab235232b48261dc907a4bcc5a0231f1f2dc47a6c0519aa0c"));
 
         vSeeds.push_back(CDNSSeedData("iadix.com","coin2.iadix.com"));
