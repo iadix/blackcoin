@@ -65,28 +65,33 @@ public:
         //    CTxIn(COutPoint(0000000000, 4294967295), coinbase 00012a24323020466562203230313420426974636f696e2041544d7320636f6d6520746f20555341)
         //    CTxOut(empty)
         //  vMerkleTree: 12630d16a9
-        const char* pszTimestamp = "20 Feb 2014 Bitcoin ATMs come to USA";
+        const char* pszTimestamp = "1 Sep 2016 Iadix coin";
         std::vector<CTxIn> vin;
         vin.resize(1);
         vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         std::vector<CTxOut> vout;
         vout.resize(1);
         vout[0].SetEmpty();
-        CTransaction txNew(1, 1393221600, vin, vout, 0);
+        CTransaction txNew(1, 1466419086, vin, vout, 0);
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1393221600;
+        genesis.nTime    = 1466419085;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 164482;
+        genesis.nNonce   = 156475;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x000001faef25dec4fbcf906e6242621df2c183bf232f263d0ba5b101911e4563"));
-        assert(genesis.hashMerkleRoot == uint256("0x12630d16a97f24b287c8c2594dda5fb98c9e6c70fc61d44191931ea2aa08dc90"));
 
-        vSeeds.push_back(CDNSSeedData("rat4.blackcoin.co", "seed.blackcoin.co"));
-        vSeeds.push_back(CDNSSeedData("syllabear.tk", "bcseed.syllabear.tk"));
+	printf("d:%x\n", genesis.nBits); 
+	printf("h:%s\n", hashGenesisBlock.ToString().c_str()); 
+        printf("m:%s\n", genesis.hashMerkleRoot.ToString().c_str()); 
+        
+	assert(hashGenesisBlock ==       uint256("0xafc381b7338232c7d0bce0079cc918d328feb97dc98038cb7e294c7e6a690054"));
+        assert(genesis.hashMerkleRoot == uint256("0xf1cde99d4ccfd3bab235232b48261dc907a4bcc5a0231f1f2dc47a6c0519aa0c"));
+
+        vSeeds.push_back(CDNSSeedData("iadix.com","coin2.iadix.com"));
+//      vSeeds.push_back(CDNSSeedData("syllabear.tk", "bcseed.syllabear.tk"));
 
         base58Prefixes[PUBKEY_ADDRESS] = list_of(25);
         base58Prefixes[SCRIPT_ADDRESS] = list_of(85);
@@ -136,7 +141,9 @@ public:
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
         genesis.nNonce = 216178;
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000724595fb3b9609d441cbfb9577615c292abf07d996d3edabc48de843642d"));
+ 
+        printf("t:%s\n", hashGenesisBlock.ToString().c_str()); 
+        assert(hashGenesisBlock == uint256("0x6939cf7af3511507a55c304ea63da994c21568e9ef1e229c282b1584a01c2e7b"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -173,7 +180,9 @@ public:
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 18444;
         strDataDir = "regtest";
-        assert(hashGenesisBlock == uint256("0x523dda6d336047722cbaf1c5dce622298af791bac21b33bf6e2d5048b2a13e3d"));
+
+        printf("t2:%s\n", hashGenesisBlock.ToString().c_str()); 
+        assert(hashGenesisBlock == uint256("0x594341409a481d0e3d3d5d4f59d0f4b46679cbc9b329249b880ff691c34f2115"));
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
     }
