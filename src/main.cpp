@@ -42,8 +42,8 @@ set<pair<COutPoint, unsigned int> > setStakeSeen;
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
 CBigNum bnProofOfStakeLimitV2(~uint256(0) >> 48);
 
-int nStakeMinConfirmations = 500;
-unsigned int nStakeMinAge = 8 * 60 * 60; // 8 hours
+int nStakeMinConfirmations = 10;
+unsigned int nStakeMinAge = 1 * 60 * 60; // 1 hours
 unsigned int nModifierInterval = 10 * 60; // time to elapse before new modifier is computed
 
 int nCoinbaseMaturity = 10;
@@ -2044,7 +2044,7 @@ bool CBlock::AcceptBlock()
 
     // Check coinbase timestamp
     if (GetBlockTime() > FutureDrift((int64_t)vtx[0].nTime, nHeight))
-        return DoS(50, error("AcceptBlock() : coinbase timestamp is too early"));
+        return DoS(50, error("AcceptBlock() : coinbase timestamp is too early %d %d",vtx[0].nTime,GetBlockTime()));
 
     // Check coinstake timestamp
     if (IsProofOfStake() && !CheckCoinStakeTimestamp(nHeight, GetBlockTime(), (int64_t)vtx[1].nTime))
