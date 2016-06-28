@@ -283,6 +283,9 @@
     <ClCompile Include="Debug\GeneratedFiles\qrc__bitcoin.cpp">
       <Filter>Source Files\qt\rsrc</Filter>
     </ClCompile>
+    <ClCompile Include="Release\GeneratedFiles\qrc__bitcoin.cpp">
+      <Filter>Source Files\qt\rsrc</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\addrman.h">
@@ -421,6 +424,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\walletdb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\qt\res\resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -769,5 +775,10 @@
     <CustomBuild Include="src\qt\bitcoinamountfield.h">
       <Filter>Header Files\qobjs</Filter>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="src\qt\res\icons\novacoin.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
