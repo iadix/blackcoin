@@ -16,7 +16,10 @@
 #include <boost/algorithm/string/predicate.hpp> // for startswith() and endswith()
 
 using namespace std;
-typedef size_t ssize_t;
+
+#ifdef _MSC_VER
+	typedef size_t ssize_t;
+#endif
 
 // Settings
 static proxyType proxyInfo[NET_MAX];
