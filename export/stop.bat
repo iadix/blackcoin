@@ -1,1 +1,1 @@
-.\iadixcoin_d.exe stop
+.\iadixcoin.exe stop

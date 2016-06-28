@@ -1882,6 +1882,12 @@ C:\Qt\5.7\msvc2013\bin\moc.exe "$(SolutionDir)src\qt\overviewpage.cpp" -o "$(Sol
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="icons\iadixcoin.ico" />
+    <Image Include="icons\iadixcoin.png" />
+    <Image Include="src\qt\res\icon1.ico" />
+    <Image Include="src\qt\res\icons\iadixcoin.ico" />
+    <Image Include="src\qt\res\icons\iadixcoin.png" />
+    <Image Include="src\qt\res\icons\icon1.ico" />
     <Image Include="src\qt\res\icons\novacoin.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

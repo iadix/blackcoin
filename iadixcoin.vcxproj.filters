@@ -780,5 +780,23 @@
     <Image Include="src\qt\res\icons\novacoin.ico">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="src\qt\res\icons\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icons\iadixcoin.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="src\qt\res\icons\iadixcoin.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icons\iadixcoin.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="src\qt\res\icons\iadixcoin.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="src\qt\res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
