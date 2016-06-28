@@ -246,5 +246,6 @@ bool OptionsDialog::eventFilter(QObject *object, QEvent *event)
     }
     return QDialog::eventFilter(object, event);
 }
-
+#ifdef _MSC_VER
 #include "optionsdialog.moc"
+#endif

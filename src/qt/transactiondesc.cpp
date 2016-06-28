@@ -269,5 +269,6 @@ QString TransactionDesc::toHTML(CWallet *wallet, CWalletTx &wtx, TransactionReco
     strHTML += "</font></html>";
     return strHTML;
 }
-
+#ifdef _MSC_VER
 #include "transactiondesc.moc"
+#endif

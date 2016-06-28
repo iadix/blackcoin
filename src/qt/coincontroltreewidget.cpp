@@ -26,4 +26,6 @@ void CoinControlTreeWidget::keyPressEvent(QKeyEvent *event)
         this->QTreeWidget::keyPressEvent(event);
     }
 }
+#ifdef _MSC_VER
 #include "coincontroltreewidget.moc"
+#endif

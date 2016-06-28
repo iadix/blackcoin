@@ -90,8 +90,9 @@ public:
 
 };
 #include "overviewpage.moc"
+#ifdef _MSC_VER
 #include "overviewpage_cpp.moc"
-
+#endif
 OverviewPage::OverviewPage(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::OverviewPage),

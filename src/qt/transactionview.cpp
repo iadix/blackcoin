@@ -431,5 +431,6 @@ void TransactionView::focusTransaction(const QModelIndex &idx)
     transactionView->setCurrentIndex(targetIdx);
     transactionView->setFocus();
 }
-
+#ifdef _MSC_VER
 #include "transactionview.moc"
+#endif

@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug Console|Win32">
+      <Configuration>Debug Console</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{40F2509A-E6D6-476B-BCF4-4419966C01B7}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>leveldb</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+    <Lib>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;$(SolutionDir)src\leveldb\;C:\Program Files (x86)\Oracle\Berkeley DB 11gR2 5.3.28\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+    <Lib>
+      <SubSystem>Console</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="db\builder.cc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)src\leveldb\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)src\leveldb\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="db\dbformat.cc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="db\db_impl.cc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="db\db_iter.cc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="db\filename.cc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="db\log_reader.cc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="db\log_writer.cc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="db\memtable.cc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="db\repair.cc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="db\table_cache.cc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="db\version_edit.cc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="db\version_set.cc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="db\write_batch.cc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="port\port_win.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="table\block.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="table\block_builder.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="table\filter_block.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="table\format.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="table\iterator.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="table\merger.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="table\table.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="table\table_builder.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="table\two_level_iterator.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="util\arena.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="util\bloom.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="util\cache.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="util\coding.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="util\comparator.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="util\crc32c.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="util\env.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="util\env_win.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="util\filter_policy.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="util\histogram.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="util\ldb_hash.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="util\logging.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="util\options.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="util\status.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="util\testharness.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="util\testutil.cc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;_DEBUG;_WINDOWS;LEVELDB_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;$(SolutionDir)src\leveldb\</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

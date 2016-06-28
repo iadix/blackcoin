@@ -500,5 +500,6 @@ void SetBlackThemeQSS(QApplication& app)
 
 } // namespace GUIUtil
 
-
+#ifdef _MSC_VER
 #include "guiutil.moc"
+#endif

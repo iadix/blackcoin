@@ -29,5 +29,6 @@ void QValueComboBox::handleSelectionChanged(int idx)
 {
     emit valueChanged();
 }
-
+#ifdef _MSC_VER
 #include "qvaluecombobox.moc"
+#endif

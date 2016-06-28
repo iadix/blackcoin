@@ -370,5 +370,6 @@ void AddressBookPage::selectNewAddress(const QModelIndex &parent, int begin, int
     }
 }
 
-
+#ifdef _MSC_VER
 #include "addressbookpage.moc"
+#endif

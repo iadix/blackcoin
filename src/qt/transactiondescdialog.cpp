@@ -19,4 +19,6 @@ TransactionDescDialog::~TransactionDescDialog()
     delete ui;
 }
 
+#ifdef _MSC_VER
 #include "transactiondescdialog.moc"
+#endif

@@ -139,3 +139,35 @@ int main(int argc, char* argv[])
 
     return (fRet ? 0 : 1);
 }
+#ifdef _MSC_VER
+#include <shellapi.h>
+int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR     lpCmdLine, int       nCmdShow)
+{
+	LPWSTR *w_argv;
+	int w_argc;
+	w_argv = CommandLineToArgvW(GetCommandLineW(), &w_argc);
+	char** argv = new char*[w_argc];
+	int argc = 0, ret;
+
+	for (int i = 0; i < w_argc; ++i)
+	{
+		int w_len = lstrlenW(w_argv[i]);
+		int len = WideCharToMultiByte(CP_ACP, 0, w_argv[i], w_len, NULL, 0, NULL, NULL);
+
+		argv[argc] = new char[len + 1];
+		WideCharToMultiByte(CP_ACP, 0, w_argv[i], w_len, argv[argc], len + 1, NULL, NULL);
+		argv[argc][len] = 0;
+		++argc;
+	}
+
+	ret = main(argc, argv);
+	for (int i = 0; i < w_argc; ++i)
+	{
+		delete argv[i];
+	}
+	delete argv;
+	return ret;
+}
+
+#endif
+

@@ -268,4 +268,7 @@ void AskPassphraseDialog::secureClearPassFields()
     ui->passEdit2->clear();
     ui->passEdit3->clear();
 }
+
+#ifdef _MSC_VER
 #include "askpassphrasedialog.moc"
+#endif

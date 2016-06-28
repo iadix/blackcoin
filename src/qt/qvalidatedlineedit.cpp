@@ -43,5 +43,6 @@ void QValidatedLineEdit::clear()
     setValid(true);
     QLineEdit::clear();
 }
-
+#ifdef _MSC_VER
 #include "qvalidatedlineedit.moc"
+#endif

@@ -227,5 +227,6 @@ int OptionsModel::getDisplayUnit()
 {
     return nDisplayUnit;
 }
-
+#ifdef _MSC_VER
 #include "optionsmodel.moc"
+#endif

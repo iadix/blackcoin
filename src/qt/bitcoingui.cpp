@@ -1053,5 +1053,6 @@ void BitcoinGUI::detectShutdown()
         QMetaObject::invokeMethod(QCoreApplication::instance(), "quit", Qt::QueuedConnection);
 }
 
-
+#ifdef _MSC_VER
 #include "bitcoingui.moc"
+#endif

@@ -96,5 +96,6 @@ int TransactionFilterProxy::rowCount(const QModelIndex &parent) const
         return QSortFilterProxyModel::rowCount(parent);
     }
 }
-
+#ifdef _MSC_VER
 #include "transactionfilterproxy.moc"
+#endif

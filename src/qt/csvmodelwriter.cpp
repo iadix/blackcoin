@@ -85,5 +85,6 @@ bool CSVModelWriter::write()
 
     return file.error() == QFile::NoError;
 }
-
+#ifdef _MSC_VER
 #include "csvmodelwriter.moc"
+#endif

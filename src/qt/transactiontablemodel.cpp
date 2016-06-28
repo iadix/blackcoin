@@ -622,5 +622,6 @@ void TransactionTableModel::updateDisplayUnit()
     emit dataChanged(index(0, Amount), index(priv->size()-1, Amount));
 }
 
-
+#ifdef _MSC_VER
 #include "transactiontablemodel.moc"
+#endif

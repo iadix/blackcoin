@@ -1,0 +1,1371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug Console|Win32">
+      <Configuration>Debug Console</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{87532C32-2FD7-40C0-AF50-5C4E31C94E3A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>iadixcoin</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)export\</OutDir>
+    <TargetName>$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)export\</OutDir>
+    <TargetName>$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VCInstallDir)PlatformSDK\include;$(IncludePath);D:\bitcore\boost_1_55_0</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;ENABLE_WALLET;BOOST_THREAD_USE_LIB;BOOST_SPIRIT_THREADSAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB 11gR2 5.3.28\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\bitcore\boost_1_55_0\stage\lib;C:\OpenSSL-Win32\lib\VC\static;C:\Program Files\Git\iadixcoin\db-5.3.28.NC\build_windows\Win32\Static Debug;$(SolutionDir)$(Configuration)\;C:\Qt\5.7\msvc2013\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;shlwapi.lib;libeay32MDd.lib;ssleay32MDd.lib;libdb53sd.lib;leveldb.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Networkd.lib;Qt5Widgetsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <PreBuildEvent>
+      <Command>C:\Qt\5.7\msvc2013\bin\moc.exe "$(SolutionDir)src\qt\rpcconsole.cpp" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\rpcconsole_cpp.moc"
+C:\Qt\5.7\msvc2013\bin\moc.exe "$(SolutionDir)src\qt\overviewpage.cpp" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\overviewpage_cpp.moc"</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;ENABLE_WALLET;BOOST_THREAD_USE_LIB;BOOST_SPIRIT_THREADSAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB 11gR2 5.3.28\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\bitcore\boost_1_55_0\stage\lib;C:\OpenSSL-Win32\lib\VC\static;C:\Program Files\Git\iadixcoin\db-5.3.28.NC\build_windows\Win32\Static Debug;C:\Qt\5.6\msvc2013_64\lib;$(SolutionDir)$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;shlwapi.lib;libeay32MDd.lib;ssleay32MDd.lib;libdb53sd.lib;leveldb.lib;Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Debug\GeneratedFiles\qrc__bitcoin.cpp" />
+    <ClCompile Include="src\addrman.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\alert.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\bitcoind.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\chainparams.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\checkpoints.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\core.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\crypter.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\db.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\hash.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\init.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\json\json_spirit_reader.cpp" />
+    <ClCompile Include="src\json\json_spirit_value.cpp" />
+    <ClCompile Include="src\json\json_spirit_writer.cpp" />
+    <ClCompile Include="src\kernel.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\key.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\keystore.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\miner.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\net.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\netbase.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\noui.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\pbkdf2.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\protocol.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\aboutdialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013\include;C:\Qt\5.7\msvc2013\include\QtCore;C:\Qt\5.7\msvc2013\include\QtWidgets;C:\Qt\5.7\msvc2013\include\QtGui;C:\Qt\5.7\msvc2013\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\addressbookpage.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\addresstablemodel.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\askpassphrasedialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\bitcoin.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\bitcoinaddressvalidator.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\bitcoinamountfield.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\bitcoingui.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\bitcoinstrings.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\bitcoinunits.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\clientmodel.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\coincontroldialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\coincontroltreewidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\csvmodelwriter.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\editaddressdialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\guiutil.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\monitoreddatamapper.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\notificator.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\optionsdialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\optionsmodel.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\overviewpage.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\paymentserver.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\qrcodedialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\qvalidatedlineedit.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\qvaluecombobox.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\rpcconsole.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\sendcoinsdialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\sendcoinsentry.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\signverifymessagedialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\trafficgraphwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\transactiondesc.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\transactiondescdialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\transactionfilterproxy.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\transactionrecord.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\transactiontablemodel.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\transactionview.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\qt\walletmodel.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\src;$(SolutionDir)$(Configuration)\GeneratedFiles;C:\Qt\5.7\msvc2013_64\include;C:\Qt\5.7\msvc2013_64\include\QtCore;C:\Qt\5.7\msvc2013_64\include\QtWidgets;C:\Qt\5.7\msvc2013_64\include\QtGui;C:\Qt\5.7\msvc2013_64\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\rpcblockchain.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\rpcclient.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\rpcdump.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\rpcmining.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\rpcmisc.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\rpcnet.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\rpcprotocol.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\rpcrawtransaction.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\rpcserver.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\rpcwallet.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\script.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\scrypt.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\sync.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\timedata.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\txdb-leveldb.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;C:\Program Files\Git\iadixcoin\src\leveldb\helpers</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;C:\Program Files\Git\iadixcoin\src\leveldb\helpers</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\txmempool.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\util.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\version.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\wallet.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\walletdb.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\addrman.h" />
+    <ClInclude Include="src\alert.h" />
+    <ClInclude Include="src\allocators.h" />
+    <ClInclude Include="src\arith_uint256.h" />
+    <ClInclude Include="src\base58.h" />
+    <ClInclude Include="src\bignum.h" />
+    <ClInclude Include="src\chainparams.h" />
+    <ClInclude Include="src\chainparamsseeds.h" />
+    <ClInclude Include="src\checkpoints.h" />
+    <ClInclude Include="src\clientversion.h" />
+    <ClInclude Include="src\coincontrol.h" />
+    <ClInclude Include="src\compat.h" />
+    <ClInclude Include="src\core.h" />
+    <ClInclude Include="src\crypter.h" />
+    <ClInclude Include="src\db.h" />
+    <ClInclude Include="src\hash.h" />
+    <ClInclude Include="src\init.h" />
+    <ClInclude Include="src\kernel.h" />
+    <ClInclude Include="src\key.h" />
+    <ClInclude Include="src\keystore.h" />
+    <ClInclude Include="src\main.h" />
+    <ClInclude Include="src\miner.h" />
+    <ClInclude Include="src\mruset.h" />
+    <ClInclude Include="src\net.h" />
+    <ClInclude Include="src\netbase.h" />
+    <ClInclude Include="src\pbkdf2.h" />
+    <ClInclude Include="src\protocol.h" />
+    <CustomBuild Include="src\qt\overviewpage.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\rpcconsole.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\aboutdialog.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\addressbookpage.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\addresstablemodel.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\askpassphrasedialog.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\bitcoinaddressvalidator.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\bitcoinamountfield.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\bitcoinunits.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\clientmodel.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\coincontroldialog.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\coincontroltreewidget.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\editaddressdialog.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\guiutil.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\bitcoingui.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\csvmodelwriter.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\monitoreddatamapper.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\notificator.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\optionsdialog.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\optionsmodel.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\paymentserver.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\sendcoinsentry.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\transactiondesc.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\sendcoinsdialog.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\signverifymessagedialog.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\trafficgraphwidget.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\transactiondescdialog.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\transactionview.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\qvalidatedlineedit.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\transactiontablemodel.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\qvaluecombobox.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\walletmodel.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\transactionfilterproxy.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\moc.exe "%(FullPath)" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Filename).%(Extension) using MOC to $(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\%(Filename).moc</Outputs>
+    </CustomBuild>
+    <ClInclude Include="src\rpcclient.h" />
+    <ClInclude Include="src\rpcprotocol.h" />
+    <ClInclude Include="src\rpcserver.h" />
+    <ClInclude Include="src\script.h" />
+    <ClInclude Include="src\scrypt.h" />
+    <ClInclude Include="src\serialize.h" />
+    <ClInclude Include="src\sync.h" />
+    <ClInclude Include="src\threadsafety.h" />
+    <ClInclude Include="src\timedata.h" />
+    <ClInclude Include="src\tinyformat.h" />
+    <ClInclude Include="src\txdb-leveldb.h" />
+    <ClInclude Include="src\txdb.h" />
+    <ClInclude Include="src\txmempool.h" />
+    <ClInclude Include="src\uint256.h" />
+    <ClInclude Include="src\ui_interface.h" />
+    <ClInclude Include="src\util.h" />
+    <ClInclude Include="src\version.h" />
+    <ClInclude Include="src\wallet.h" />
+    <ClInclude Include="src\walletdb.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\qt\res\bitcoin-qt.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="src\qt\forms\aboutdialog.ui">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\5.7\msvc2013\bin\uic.exe" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> UIC'ing %(Identity)... to $(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\uic.exe</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\forms\addressbookpage.ui">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\5.7\msvc2013\bin\uic.exe" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> UIC'ing %(Identity)... to $(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\uic.exe</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\forms\askpassphrasedialog.ui">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\5.7\msvc2013\bin\uic.exe" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> UIC'ing %(Identity)... to $(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\uic.exe</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\forms\coincontroldialog.ui">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\5.7\msvc2013\bin\uic.exe" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> UIC'ing %(Identity)... to $(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\uic.exe</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\forms\editaddressdialog.ui">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\5.7\msvc2013\bin\uic.exe" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> UIC'ing %(Identity)... to $(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\uic.exe</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\forms\optionsdialog.ui">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\5.7\msvc2013\bin\uic.exe" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> UIC'ing %(Identity)... to $(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\uic.exe</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\forms\overviewpage.ui">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\5.7\msvc2013\bin\uic.exe" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> UIC'ing %(Identity)... to $(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\uic.exe</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\forms\qrcodedialog.ui">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\5.7\msvc2013\bin\uic.exe" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> UIC'ing %(Identity)... to $(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\uic.exe</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\forms\rpcconsole.ui">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\5.7\msvc2013\bin\uic.exe" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> UIC'ing %(Identity)... to $(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\uic.exe</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\forms\sendcoinsdialog.ui">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\5.7\msvc2013\bin\uic.exe" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> UIC'ing %(Identity)... to $(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\uic.exe</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\forms\sendcoinsentry.ui">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\5.7\msvc2013\bin\uic.exe" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> UIC'ing %(Identity)... to $(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\uic.exe</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\forms\signverifymessagedialog.ui">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\5.7\msvc2013\bin\uic.exe" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> UIC'ing %(Identity)... to $(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\uic.exe</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\forms\transactiondescdialog.ui">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Qt\5.7\msvc2013\bin\uic.exe" -o "$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> UIC'ing %(Identity)... to $(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\ui_%(Filename).h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\uic.exe</AdditionalInputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="src\qt\bitcoin.qrc">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd C:\Program Files\Git\iadixcoin\src\qt
+ "C:\Qt\5.7\msvc2013\bin\rcc.exe" -name bitcoin -o "$(SolutionDir)$(Configuration)\GeneratedFiles\qrc__bitcoin.cpp" bitcoin.qrc </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> RCC %(FullPath) to $(SolutionDir)$(Configuration)\GeneratedFiles\qrc__bitcoin.cpp</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\qrc__bitcoin.cpp</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="src\qt\locale\bitcoin_af_ZA.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_ar.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_be_BY.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_bg.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_bs.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_ca%40valencia.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_ca.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_ca_ES.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_cs.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_cy.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_da.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_de.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_el_GR.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_en.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_eo.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_es.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_es_AR.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_es_CL.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_es_DO.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_es_MX.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_es_UY.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_et.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_eu_ES.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_fa.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_fa_IR.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_fi.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_fr.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_fr_CA.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_gl.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_he.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_hi_IN.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_hr.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_hu.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_id_ID.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_it.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_ja.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_ka.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_kk_KZ.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_ko_KR.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_ky.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_la.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_lt.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_lv_LV.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_ms_MY.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_nb.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_nl.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_pam.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_pl.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_pt_BR.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_pt_PT.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_ro_RO.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_ru.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_sah.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_sk.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_sl_SI.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_sq.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_sr.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_sv.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_th_TH.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_tr.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_uk.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_ur_PK.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_vi.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_vi_VN.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_zh_CN.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="src\qt\locale\bitcoin_zh_TW.ts">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\5.7\msvc2013\bin\lrelease.exe "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">lrelease %FullPath</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FileName).qm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

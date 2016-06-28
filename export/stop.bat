@@ -1,0 +1,1 @@
+.\iadixcoin_d.exe stop

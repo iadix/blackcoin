@@ -34,5 +34,6 @@ void MonitoredDataMapper::addChangeMonitor(QWidget *widget)
     }
 }
 
-
+#ifdef _MSC_VER
 #include "monitoreddatamapper.moc"
+#endif

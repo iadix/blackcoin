@@ -173,5 +173,6 @@ void SendCoinsEntry::updateDisplayUnit()
         ui->payAmount->setDisplayUnit(model->getOptionsModel()->getDisplayUnit());
     }
 }
-
+#ifdef _MSC_VER
 #include "sendcoinsentry.moc"
+#endif

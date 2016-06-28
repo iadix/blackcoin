@@ -50,8 +50,9 @@ signals:
 };
 
 #include "rpcconsole.moc"
+#ifdef _MSC_VER
 #include "rpcconsole_cpp.moc"
-
+#endif
 void RPCExecutor::start()
 {
    // Nothing to do

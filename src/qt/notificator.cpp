@@ -302,5 +302,6 @@ void Notificator::notify(Class cls, const QString &title, const QString &text, c
         break;
     }
 }
-
+#ifdef _MSC_VER
 #include "notificator.moc"
+#endif

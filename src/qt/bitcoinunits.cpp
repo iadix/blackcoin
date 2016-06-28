@@ -180,5 +180,6 @@ QVariant BitcoinUnits::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-
+#ifdef _MSC_VER
 #include "bitcoinunits.moc"
+#endif

@@ -514,5 +514,6 @@ void SendCoinsDialog::coinControlUpdateLabels()
         ui->labelCoinControlInsuffFunds->hide();
     }
 }
-
+#ifdef _MSC_VER
 #include "sendcoinsdialog.moc"
+#endif

@@ -29,4 +29,6 @@ void AboutDialog::on_buttonBox_accepted()
     close();
 }
 
+#ifdef _MSC_VER
 #include "aboutdialog.moc"
+#endif

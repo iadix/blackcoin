@@ -715,5 +715,6 @@ void CoinControlDialog::updateView()
     sortView(sortColumn, sortOrder);
     ui->treeWidget->setEnabled(true);
 }
-
+#ifdef _MSC_VER
 #include "coincontroldialog.moc"
+#endif
