@@ -761,7 +761,7 @@ bool Win32Env::FileExists(const std::string& fname)
 	std::string path = fname;
     std::wstring wpath;
 	ToWidePath(ModifyPath(path), wpath);
-    return ::PathFileExistsW(wpath.c_str()) ? true : false;
+	return PathFileExistsW(wpath.c_str()) ? true : false;
 }
 
 Status Win32Env::GetChildren(const std::string& dir, std::vector<std::string>* result)

@@ -481,3 +481,5 @@ void WalletModel::listLockedCoins(std::vector<COutPoint>& vOutpts)
 {
     return;
 }
+
+#include "walletmodel.moc"

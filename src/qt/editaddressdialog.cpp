@@ -135,3 +135,5 @@ void EditAddressDialog::setAddress(const QString &address)
     this->address = address;
     ui->addressEdit->setText(address);
 }
+
+#include "editaddressdialog.moc"

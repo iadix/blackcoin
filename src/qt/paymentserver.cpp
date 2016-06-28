@@ -163,3 +163,5 @@ void PaymentServer::setOptionsModel(OptionsModel *optionsModel)
 {
     this->optionsModel = optionsModel;
 }
+
+#include "paymentserver.moc"

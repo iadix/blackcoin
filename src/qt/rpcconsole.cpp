@@ -50,6 +50,7 @@ signals:
 };
 
 #include "rpcconsole.moc"
+#include "rpcconsole_cpp.moc"
 
 void RPCExecutor::start()
 {

@@ -227,3 +227,5 @@ int OptionsModel::getDisplayUnit()
 {
     return nDisplayUnit;
 }
+
+#include "optionsmodel.moc"

@@ -295,8 +295,21 @@ public:
     std::string GetHex() const
     {
         char psz[sizeof(pn)*2 + 1];
-        for (unsigned int i = 0; i < sizeof(pn); i++)
-            sprintf(psz + i*2, "%02x", ((unsigned char*)pn)[sizeof(pn) - i - 1]);
+		for (unsigned int i = 0; i < sizeof(pn); i++)
+		{
+#ifdef _MSC_VER
+			unsigned char c = ((unsigned char*)pn)[sizeof(pn) - i - 1];
+			if (c>=16)
+				_itoa_s(c, psz + i * 2, sizeof(psz)-i*2,16);
+			else
+			{
+				*(psz + i * 2) = '0';
+				_itoa_s(c, psz + i * 2+1, sizeof(psz) - (i * 2+1), 16);
+			}
+#else
+			//sprintf(psz + i * 2, "%02x", ((unsigned char*)pn)[sizeof(pn) - i - 1]);
+#endif
+		}
         return std::string(psz, psz + sizeof(pn)*2);
     }
 

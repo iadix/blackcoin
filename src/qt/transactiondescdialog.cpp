@@ -18,3 +18,5 @@ TransactionDescDialog::~TransactionDescDialog()
 {
     delete ui;
 }
+
+#include "transactiondescdialog.moc"

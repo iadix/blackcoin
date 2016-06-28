@@ -157,9 +157,9 @@ public:
     {
         unsigned long n = BN_get_word(this);
         if (!BN_is_negative(this))
-            return (n > (unsigned long)std::numeric_limits<int>::max() ? std::numeric_limits<int>::max() : n);
+			return (n > (unsigned long)((std::numeric_limits<long>::max)()) ? ((std::numeric_limits<long>::max)()) : n);
         else
-            return (n > (unsigned long)std::numeric_limits<int>::max() ? std::numeric_limits<int>::min() : -(int)n);
+			return (n > (unsigned long)((std::numeric_limits<long>::max)()) ? ((std::numeric_limits<long>::min)()) : -(int)n);
     }
 
     void setint64(int64_t sn)
@@ -532,7 +532,7 @@ public:
         if(ret < 0){
             throw bignum_error("CBigNum::isPrime :BN_is_prime");
         }
-        return ret;
+        return ret?true:false;
     }
 
     bool isOne() const {

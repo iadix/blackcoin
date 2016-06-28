@@ -33,3 +33,6 @@ void MonitoredDataMapper::addChangeMonitor(QWidget *widget)
         QMetaObject::connect(widget, signal, this, method);
     }
 }
+
+
+#include "monitoreddatamapper.moc"

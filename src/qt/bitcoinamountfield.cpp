@@ -162,3 +162,5 @@ void BitcoinAmountField::setDisplayUnit(int newUnit)
 {
     unit->setValue(newUnit);
 }
+
+#include "bitcoinamountfield.moc"

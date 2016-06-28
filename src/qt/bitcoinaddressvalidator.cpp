@@ -75,3 +75,5 @@ QValidator::State BitcoinAddressValidator::validate(QString &input, int &pos) co
 
     return state;
 }
+
+#include "bitcoinaddressvalidator.moc"

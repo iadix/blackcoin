@@ -28,3 +28,5 @@ void AboutDialog::on_buttonBox_accepted()
 {
     close();
 }
+
+#include "aboutdialog.moc"

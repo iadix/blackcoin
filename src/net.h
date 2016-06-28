@@ -9,7 +9,7 @@
 #include <boost/array.hpp>
 #include <boost/foreach.hpp>
 #include <boost/signals2/signal.hpp>
-#include <openssl/rand.h>
+
 
 
 #ifndef WIN32
@@ -21,6 +21,8 @@
 #include "protocol.h"
 #include "addrman.h"
 #include "hash.h"
+
+#include <openssl/rand.h>
 
 class CNode;
 class CBlockIndex;
@@ -396,11 +398,11 @@ public:
         int64_t nNow = (GetTime() - 1) * 1000000;
         static int64_t nLastTime;
         ++nLastTime;
-        nNow = std::max(nNow, nLastTime);
+        nNow = (std::max)(nNow, nLastTime);
         nLastTime = nNow;
 
         // Each retry is 2 minutes after the last
-        nRequestTime = std::max(nRequestTime + 2 * 60 * 1000000, nNow);
+        nRequestTime = (std::max)(nRequestTime + 2 * 60 * 1000000, nNow);
         mapAskFor.insert(std::make_pair(nRequestTime, inv));
     }
 
