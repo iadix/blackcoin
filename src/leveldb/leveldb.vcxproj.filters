@@ -84,9 +84,6 @@
     <ClCompile Include="util\filter_policy.cc">
       <Filter>Source Files\util</Filter>
     </ClCompile>
-    <ClCompile Include="util\ldb_hash.cc">
-      <Filter>Source Files\util</Filter>
-    </ClCompile>
     <ClCompile Include="util\histogram.cc">
       <Filter>Source Files\util</Filter>
     </ClCompile>
@@ -143,6 +140,9 @@
     </ClCompile>
     <ClCompile Include="db\write_batch.cc">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\hash.cc">
+      <Filter>Source Files\util</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
