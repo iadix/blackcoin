@@ -2565,6 +2565,15 @@ void PrintBlockTree()
 
 bool LoadExternalBlockFile(FILE* fileIn)
 {
+#ifdef __PRETTY_FUNCTION__
+        #define FUNCTION_NAME __PRETTY_FUNCTION__
+#elif defined(__FUNCTION__)
+        #define FUNCTION_NAME __FUNCTION__
+#elif defined(__func__)
+        #define FUNCTION_NAME __func__
+#else
+       #define FUNCTION_NAME ""
+#endif
     int64_t nStart = GetTimeMillis();
 
     int nLoaded = 0;
@@ -2618,7 +2627,7 @@ bool LoadExternalBlockFile(FILE* fileIn)
         }
         catch (std::exception &e) {
             LogPrintf("%s() : Deserialize or I/O error caught during load\n",
-                   __PRETTY_FUNCTION__);
+				FUNCTION_NAME);
         }
     }
     LogPrintf("Loaded %i blocks from external file in %dms\n", nLoaded, GetTimeMillis() - nStart);

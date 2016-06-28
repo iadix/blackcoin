@@ -310,6 +310,15 @@ public:
 
     bool ReadFromDisk(CDiskTxPos pos, FILE** pfileRet=NULL)
     {
+#ifdef __PRETTY_FUNCTION__
+        #define FUNCTION_NAME __PRETTY_FUNCTION__
+#elif defined(__FUNCTION__)
+        #define FUNCTION_NAME __FUNCTION__
+#elif defined(__func__)
+        #define FUNCTION_NAME __func__
+#else
+        #define FUNCTION_NAME ""
+#endif
         CAutoFile filein = CAutoFile(OpenBlockFile(pos.nFile, 0, pfileRet ? "rb+" : "rb"), SER_DISK, CLIENT_VERSION);
         if (!filein)
             return error("CTransaction::ReadFromDisk() : OpenBlockFile failed");
@@ -322,7 +331,7 @@ public:
             filein >> *this;
         }
         catch (std::exception &e) {
-            return error("%s() : deserialize or I/O error", __PRETTY_FUNCTION__);
+			return error("%s() : deserialize or I/O error", FUNCTION_NAME);
         }
 
         // Return file pointer
@@ -782,6 +791,15 @@ public:
 
     bool ReadFromDisk(unsigned int nFile, unsigned int nBlockPos, bool fReadTransactions=true)
     {
+#ifdef __PRETTY_FUNCTION__
+        #define FUNCTION_NAME __PRETTY_FUNCTION__
+#elif  defined(__FUNCTION__)
+        #define FUNCTION_NAME __FUNCTION__
+#elif defined(__func__)
+        #define FUNCTION_NAME __func__
+#else
+        #define FUNCTION_NAME ""
+#endif
         SetNull();
 
         // Open history file to read
@@ -796,7 +814,7 @@ public:
             filein >> *this;
         }
         catch (std::exception &e) {
-            return error("%s() : deserialize or I/O error", __PRETTY_FUNCTION__);
+			return error("%s() : deserialize or I/O error", FUNCTION_NAME);
         }
 
         // Check the header
