@@ -167,6 +167,6 @@ void TrafficGraphWidget::clear()
     }
     timer->start();
 }
-#ifdef
+#ifdef _MSC_VER
 #include "trafficgraphwidget.moc"
 #endif
