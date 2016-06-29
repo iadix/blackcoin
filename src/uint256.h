@@ -290,25 +290,21 @@ public:
         return (!(a == b));
     }
 
-
+	char hex_chars[]=['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
 
     std::string GetHex() const
     {
         char psz[sizeof(pn)*2 + 1];
 		for (unsigned int i = 0; i < sizeof(pn); i++)
 		{
-#ifdef _MSC_VER
-			unsigned char c = ((unsigned char*)pn)[sizeof(pn) - i - 1];
-			if (c>=16)
-				_itoa_s(c, psz + i * 2, sizeof(psz)-i*2,16);
-			else
-			{
-				*(psz + i * 2) = '0';
-				_itoa_s(c, psz + i * 2+1, sizeof(psz) - (i * 2+1), 16);
-			}
-#else
+			unsigned char uc = ((unsigned char*)pn)[sizeof(pn) - i - 1];
+			unsigned char c1, c2;
+
+			c1		 = uc & 0x0F;
+			c2		 = uc >> 4;
+			*(psz++) = hex_chars[c2];
+			*(psz++) = hex_chars[c1];
 			//sprintf(psz + i * 2, "%02x", ((unsigned char*)pn)[sizeof(pn) - i - 1]);
-#endif
 		}
         return std::string(psz, psz + sizeof(pn)*2);
     }
