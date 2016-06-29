@@ -84,12 +84,14 @@ public:
         hashGenesisBlock = genesis.GetHash();
 
 	/*
-	printf("d:%x\n", genesis.nBits); 
-	printf("h:%s\n", hashGenesisBlock.ToString().c_str()); 
+		if(hashGenesisBlock != uint256("00000aba166cc8d3a5575db78dd1f0a8e74dfd7531d330cd1595a104f641fc88"))
+		{
+		printf("d:%x\n", genesis.nBits); 
+		printf("h:%s\n", hashGenesisBlock.ToString().c_str()); 
         printf("m:%s\n", genesis.hashMerkleRoot.ToString().c_str()); 
 
 
- // If genesis block hash does not match, then generate new genesis hash.
+		// If genesis block hash does not match, then generate new genesis hash.
         printf("Searching for genesis block...\n");
         // This will figure out a valid hash and Nonce if you're
         // creating a different genesis block:
@@ -115,13 +117,13 @@ public:
         printf("block.nTime = %u \n", genesis.nTime);
         printf("block.nNonce = %u \n", genesis.nNonce);
         printf("block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+		}
 	*/
         
-	assert(hashGenesisBlock ==       uint256("00000aba166cc8d3a5575db78dd1f0a8e74dfd7531d330cd1595a104f641fc88"));
+		assert(hashGenesisBlock ==       uint256("00000aba166cc8d3a5575db78dd1f0a8e74dfd7531d330cd1595a104f641fc88"));
         assert(genesis.hashMerkleRoot == uint256("0xf1cde99d4ccfd3bab235232b48261dc907a4bcc5a0231f1f2dc47a6c0519aa0c"));
 
         vSeeds.push_back(CDNSSeedData("iadix.com","coin.iadix.com"));
-//      vSeeds.push_back(CDNSSeedData("syllabear.tk", "bcseed.syllabear.tk"));
 
         base58Prefixes[PUBKEY_ADDRESS] = list_of(25);
         base58Prefixes[SCRIPT_ADDRESS] = list_of(85);
@@ -131,7 +133,7 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
-        nLastPOWBlock = 100;
+        nLastPOWBlock = 200;
     }
 
     virtual const CBlock& GenesisBlock() const { return genesis; }

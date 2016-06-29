@@ -44,7 +44,7 @@ CBigNum bnProofOfStakeLimitV2(~uint256(0) >> 48);
 
 int nStakeMinConfirmations = 10;
 unsigned int nStakeMinAge = 1 * 60 * 60; // 1 hours
-unsigned int nModifierInterval = 10 * 60; // time to elapse before new modifier is computed
+unsigned int nModifierInterval = 1 * 60; // time to elapse before new modifier is computed
 
 int nCoinbaseMaturity = 10;
 CBlockIndex* pindexGenesisBlock = NULL;
@@ -971,7 +971,7 @@ static CBigNum GetProofOfStakeLimit(int nHeight)
 // miner's coin base reward
 int64_t GetProofOfWorkReward(int64_t nFees)
 {
-    int64_t nSubsidy = 1000000 * COIN;
+    int64_t nSubsidy = 100000 * COIN;
 
     LogPrint("creation", "GetProofOfWorkReward() : create=%s nSubsidy=%d\n", FormatMoney(nSubsidy), nSubsidy);
 
