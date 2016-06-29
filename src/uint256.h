@@ -290,10 +290,11 @@ public:
         return (!(a == b));
     }
 
-	char hex_chars[]=['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+	
 
     std::string GetHex() const
     {
+		static cont char hex_chars[16] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
         char psz[sizeof(pn)*2 + 1];
 		for (unsigned int i = 0; i < sizeof(pn); i++)
 		{
