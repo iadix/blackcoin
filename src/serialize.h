@@ -881,8 +881,9 @@ public:
     {
         Init(nTypeIn, nVersionIn);
     }
+	//CDataStream(const std::vector<unsigned char>& vchIn, int nTypeIn, int nVersionIn) : vch((char*)&vchIn.begin()[0], (char*)&vchIn.end()[0])
 
-	CDataStream(const std::vector<unsigned char>& vchIn, int nTypeIn, int nVersionIn) : vch((char*)&*vchIn.begin(), (char*)&*vchIn.rbegin())
+	CDataStream(const std::vector<unsigned char>& vchIn, int nTypeIn, int nVersionIn) : vch((char*)&vchIn.begin()[0], (char*)&(*vchIn.end()))
     {
         Init(nTypeIn, nVersionIn);
     }
