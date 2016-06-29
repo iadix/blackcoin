@@ -296,15 +296,15 @@ public:
     {
 		static const char hex_chars[16] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
         char psz[sizeof(pn)*2 + 1];
+		char *ppsz = psz;
 		for (unsigned int i = 0; i < sizeof(pn); i++)
 		{
 			unsigned char uc = ((unsigned char*)pn)[sizeof(pn) - i - 1];
 			unsigned char c1, c2;
-
 			c1		 = uc & 0x0F;
 			c2		 = uc >> 4;
-			*(psz++) = hex_chars[c2];
-			*(psz++) = hex_chars[c1];
+			*(ppsz++) = hex_chars[c2];
+			*(ppsz++) = hex_chars[c1];
 			//sprintf(psz + i * 2, "%02x", ((unsigned char*)pn)[sizeof(pn) - i - 1]);
 		}
         return std::string(psz, psz + sizeof(pn)*2);
