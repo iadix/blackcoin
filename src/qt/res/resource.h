@@ -770,6 +770,7 @@
 #define VK_NUMPAD9                      0x69
 #define VK_MULTIPLY                     0x6A
 #define LANG_YORUBA                     0x6a
+#define IDI_ICON1                       106
 #define VK_ADD                          0x6B
 #define LANG_QUECHUA                    0x6b
 #define VK_SEPARATOR                    0x6C
@@ -1510,7 +1511,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        101
+#define _APS_NEXT_RESOURCE_VALUE        107
 #define _APS_NEXT_COMMAND_VALUE         40001
 #define _APS_NEXT_CONTROL_VALUE         1000
 #define _APS_NEXT_SYMED_VALUE           101

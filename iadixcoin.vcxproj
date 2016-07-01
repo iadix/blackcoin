@@ -1217,6 +1217,7 @@ C:\Qt\5.7\msvc2013\bin\moc.exe "$(SolutionDir)src\qt\overviewpage.cpp" -o "$(Sol
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\qrc__bitcoin.cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release Console|Win32'">$(SolutionDir)$(Configuration)\GeneratedFiles\qrc__bitcoin.cpp</Outputs>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release Console|Win32'">true</ExcludedFromBuild>
+      <SubType>Designer</SubType>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
