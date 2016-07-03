@@ -206,6 +206,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static Release|x64'">
     <ClCompile>
       <PreprocessorDefinitions>_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
