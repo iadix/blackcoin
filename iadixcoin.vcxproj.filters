@@ -286,6 +286,9 @@
     <ClCompile Include="Release\GeneratedFiles\qrc__bitcoin.cpp">
       <Filter>Source Files\qt\rsrc</Filter>
     </ClCompile>
+    <ClCompile Include="x64\Release\GeneratedFiles\qrc__bitcoin.cpp">
+      <Filter>Source Files\qt\rsrc</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\addrman.h">
