@@ -135,8 +135,9 @@
     <TargetName>$(ProjectName)_d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Console|x64'">
-    <TargetName>$(ProjectName)_d</TargetName>
+    <TargetName>$(ProjectName)_cd</TargetName>
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)export\$(Platform)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -231,14 +232,14 @@ C:\Qt\5.7\msvc2013\bin\moc.exe "$(SolutionDir)src\qt\overviewpage.cpp" -o "$(Sol
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;ENABLE_WALLET;BOOST_THREAD_USE_LIB;BOOST_SPIRIT_THREADSAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB 11gR2 5.3.28\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;ENABLE_WALLET;BOOST_THREAD_USE_LIB;BOOST_SPIRIT_THREADSAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\OpenSSL-Win64\include;c:\local\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB 11gR2 5.3.28\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\bitcore\boost_1_55_0\stage\lib;C:\OpenSSL-Win32\lib\VC\static;C:\Program Files\Git\iadixcoin\db-5.3.28.NC\build_windows\Win32\Static Debug;C:\Qt\5.7\msvc2013\lib;$(SolutionDir)$(Configuration)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>shlwapi.lib;libeay32MDd.lib;ssleay32MDd.lib;libdb53sd.lib;leveldb.lib;Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\local\boost_1_55_0\lib64-msvc-12.0;C:\OpenSSL-Win64\lib\VC\static;C:\Program Files\Git\iadixcoin\db-5.3.28.NC\build_windows\x64\Static Debug;C:\Qt\5.7\msvc2013_64\lib;$(SolutionDir)$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>shlwapi.lib;libeay32MDd.lib;ssleay32MDd.lib;libdb53sd.lib;leveldb_cd.lib;Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ProjectReference>
       <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
@@ -338,11 +339,13 @@ C:\Qt\5.7\msvc2013_64\bin\moc.exe "$(SolutionDir)src\qt\overviewpage.cpp" -o "$(
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release Console|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release Console|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Release\GeneratedFiles\qrc__bitcoin.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release Console|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release Console|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\addrman.cpp" />
     <ClCompile Include="src\alert.cpp" />
@@ -359,7 +362,9 @@ C:\Qt\5.7\msvc2013_64\bin\moc.exe "$(SolutionDir)src\qt\overviewpage.cpp" -o "$(
     <ClCompile Include="src\db.cpp" />
     <ClCompile Include="src\hash.cpp" />
     <ClCompile Include="src\init.cpp" />
-    <ClCompile Include="src\json\json_spirit_reader.cpp" />
+    <ClCompile Include="src\json\json_spirit_reader.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug Console|x64'">/bigobj</AdditionalOptions>
+    </ClCompile>
     <ClCompile Include="src\json\json_spirit_value.cpp" />
     <ClCompile Include="src\json\json_spirit_writer.cpp" />
     <ClCompile Include="src\kernel.cpp" />
@@ -919,7 +924,12 @@ C:\Qt\5.7\msvc2013_64\bin\moc.exe "$(SolutionDir)src\qt\overviewpage.cpp" -o "$(
     <ClCompile Include="src\version.cpp" />
     <ClCompile Include="src\wallet.cpp" />
     <ClCompile Include="src\walletdb.cpp" />
-    <ClCompile Include="x64\Release\GeneratedFiles\qrc__bitcoin.cpp" />
+    <ClCompile Include="x64\Release\GeneratedFiles\qrc__bitcoin.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release Console|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release Console|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\addrman.h" />
@@ -2169,6 +2179,7 @@ C:\Qt\5.7\msvc2013_64\bin\moc.exe "$(SolutionDir)src\qt\overviewpage.cpp" -o "$(
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release Console|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release Console|x64'">true</ExcludedFromBuild>
       <SubType>Designer</SubType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|x64'">true</ExcludedFromBuild>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

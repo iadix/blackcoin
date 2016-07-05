@@ -31,7 +31,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{87532C32-2FD7-40C0-AF50-5C4E31C94E3A}.Debug Console|Win32.ActiveCfg = Debug Console|Win32
 		{87532C32-2FD7-40C0-AF50-5C4E31C94E3A}.Debug Console|Win32.Build.0 = Debug Console|Win32
-		{87532C32-2FD7-40C0-AF50-5C4E31C94E3A}.Debug Console|x64.ActiveCfg = Debug Console|Win32
+		{87532C32-2FD7-40C0-AF50-5C4E31C94E3A}.Debug Console|x64.ActiveCfg = Debug Console|x64
+		{87532C32-2FD7-40C0-AF50-5C4E31C94E3A}.Debug Console|x64.Build.0 = Debug Console|x64
 		{87532C32-2FD7-40C0-AF50-5C4E31C94E3A}.Debug|Win32.ActiveCfg = Debug|Win32
 		{87532C32-2FD7-40C0-AF50-5C4E31C94E3A}.Debug|Win32.Build.0 = Debug|Win32
 		{87532C32-2FD7-40C0-AF50-5C4E31C94E3A}.Debug|x64.ActiveCfg = Debug|Win32
@@ -52,8 +53,8 @@ Global
 		{87532C32-2FD7-40C0-AF50-5C4E31C94E3A}.Static Release|x64.ActiveCfg = Release|Win32
 		{FD045D60-ABAD-4A6C-9794-9BFB085FC3E7}.Debug Console|Win32.ActiveCfg = Debug Console|Win32
 		{FD045D60-ABAD-4A6C-9794-9BFB085FC3E7}.Debug Console|Win32.Build.0 = Debug Console|Win32
-		{FD045D60-ABAD-4A6C-9794-9BFB085FC3E7}.Debug Console|x64.ActiveCfg = Debug Console|x64
-		{FD045D60-ABAD-4A6C-9794-9BFB085FC3E7}.Debug Console|x64.Build.0 = Debug Console|x64
+		{FD045D60-ABAD-4A6C-9794-9BFB085FC3E7}.Debug Console|x64.ActiveCfg = Static Debug|x64
+		{FD045D60-ABAD-4A6C-9794-9BFB085FC3E7}.Debug Console|x64.Build.0 = Static Debug|x64
 		{FD045D60-ABAD-4A6C-9794-9BFB085FC3E7}.Debug|Win32.ActiveCfg = Static Debug|Win32
 		{FD045D60-ABAD-4A6C-9794-9BFB085FC3E7}.Debug|Win32.Build.0 = Static Debug|Win32
 		{FD045D60-ABAD-4A6C-9794-9BFB085FC3E7}.Debug|x64.ActiveCfg = Debug|x64
@@ -76,7 +77,8 @@ Global
 		{FD045D60-ABAD-4A6C-9794-9BFB085FC3E7}.Static Release|x64.Build.0 = Static Release|x64
 		{40F2509A-E6D6-476B-BCF4-4419966C01B7}.Debug Console|Win32.ActiveCfg = Debug Console|Win32
 		{40F2509A-E6D6-476B-BCF4-4419966C01B7}.Debug Console|Win32.Build.0 = Debug Console|Win32
-		{40F2509A-E6D6-476B-BCF4-4419966C01B7}.Debug Console|x64.ActiveCfg = Debug|Win32
+		{40F2509A-E6D6-476B-BCF4-4419966C01B7}.Debug Console|x64.ActiveCfg = Debug Console|x64
+		{40F2509A-E6D6-476B-BCF4-4419966C01B7}.Debug Console|x64.Build.0 = Debug Console|x64
 		{40F2509A-E6D6-476B-BCF4-4419966C01B7}.Debug|Win32.ActiveCfg = Debug|Win32
 		{40F2509A-E6D6-476B-BCF4-4419966C01B7}.Debug|Win32.Build.0 = Debug|Win32
 		{40F2509A-E6D6-476B-BCF4-4419966C01B7}.Debug|x64.ActiveCfg = Debug|Win32

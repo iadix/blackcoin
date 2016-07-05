@@ -239,7 +239,57 @@ Value importwallet(const Array& params, bool fHelp)
 
     return Value::null;
 }
+Value exportwallet(const Array& params, bool fHelp)
+{
+	CKey			newKey;
+	CKeyID			keyID;
+	CKey			vchSecret;
+	Value			ret;
+	string			strAddress;
+	CBitcoinAddress address;
+	CWalletDB		*cdb;
+	CWallet			*pwalletNew;
+	DBErrors		nLoadWalletRet;
 
+
+	if (fHelp || params.size() != 3)
+		throw runtime_error(
+		"exportwallet <address> <filename> <secret>\n"
+		"Export a wallet keys in a wallet file.");
+
+	EnsureWalletIsUnlocked();
+
+	strAddress = params[0].get_str();
+
+	if (!address.SetString(strAddress))
+		throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid IadixCoin address");
+	if (fWalletUnlockStakingOnly)
+		throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Wallet is unlocked for staking only.");
+	if (!address.GetKeyID(keyID))
+		throw JSONRPCError(RPC_TYPE_ERROR, "Address does not refer to a key");
+	if (!pwalletMain->GetKey(keyID, vchSecret))
+		throw JSONRPCError(RPC_WALLET_ERROR, "Private key for address " + strAddress + " is not known");
+	newKey			=	CBitcoinSecret(vchSecret).GetKey();
+	pwalletNew		= new  CWallet			  (params[1].get_str());
+	cdb				= new  CWalletDB		  (params[1].get_str(), "cr+");
+	nLoadWalletRet	= cdb->LoadWallet		  (pwalletNew);
+
+	if (nLoadWalletRet != DB_LOAD_OK)
+	{
+		throw JSONRPCError(RPC_WALLET_ERROR, "Error creating new wallet");
+		return Value::null;
+	}
+	pwalletNew->AddKey					  (newKey);
+	pwalletNew->ScanForWalletTransactions (pindexGenesisBlock, true);
+	cdb->Close							  ();
+	pwalletNew->EncryptWallet			  (params[2].get_str().c_str());
+	
+	delete cdb;
+	delete pwalletNew;
+
+	ret = (GetDataDir() / params[1].get_str()).string();
+	return ret;
+}
 
 Value dumpprivkey(const Array& params, bool fHelp)
 {
