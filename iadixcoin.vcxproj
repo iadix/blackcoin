@@ -132,7 +132,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)export\</OutDir>
-    <TargetName>$(ProjectName)_d</TargetName>
+    <TargetName>$(ProjectName)_cd</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Console|x64'">
     <TargetName>$(ProjectName)_cd</TargetName>
@@ -340,12 +340,14 @@ C:\Qt\5.7\msvc2013_64\bin\moc.exe "$(SolutionDir)src\qt\overviewpage.cpp" -o "$(
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release Console|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release Console|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Release\GeneratedFiles\qrc__bitcoin.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release Console|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release Console|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\addrman.cpp" />
     <ClCompile Include="src\alert.cpp" />
@@ -929,6 +931,7 @@ C:\Qt\5.7\msvc2013_64\bin\moc.exe "$(SolutionDir)src\qt\overviewpage.cpp" -o "$(
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release Console|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release Console|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2180,6 +2183,7 @@ C:\Qt\5.7\msvc2013_64\bin\moc.exe "$(SolutionDir)src\qt\overviewpage.cpp" -o "$(
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release Console|x64'">true</ExcludedFromBuild>
       <SubType>Designer</SubType>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

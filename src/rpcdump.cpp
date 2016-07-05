@@ -283,7 +283,8 @@ Value exportwallet(const Array& params, bool fHelp)
 	pwalletNew->ScanForWalletTransactions (pindexGenesisBlock, true);
 	cdb->Close							  ();
 	pwalletNew->EncryptWallet			  (params[2].get_str().c_str());
-	
+	bitdb.dbenv.dbrename				  (NULL, params[1].get_str().c_str(), NULL, "wallet.dat", DB_AUTO_COMMIT);
+	bitdb.CloseDb						  (params[1].get_str());
 	delete cdb;
 	delete pwalletNew;
 
