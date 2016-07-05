@@ -274,6 +274,7 @@ Value exportwallet(const Array& params, bool fHelp)
 	cdb				= new  CWalletDB		  (params[1].get_str(), "cr+");
 	nLoadWalletRet	= cdb->LoadWallet		  (pwalletNew);
 
+
 	if (nLoadWalletRet != DB_LOAD_OK)
 	{
 		throw JSONRPCError(RPC_WALLET_ERROR, "Error creating new wallet");
@@ -284,6 +285,7 @@ Value exportwallet(const Array& params, bool fHelp)
 	//bitdb.dbenv.dbrename				  (NULL, params[1].get_str().c_str(), NULL, "wallet.dat", DB_AUTO_COMMIT);
 	cdb->Close							  ();
 	pwalletNew->SetDefaultKey			  (newKey.GetPubKey());
+	pwalletNew->SetAddressBookName		  (pwalletNew->vchDefaultKey.GetID(), "iadix platform ICO");
 	pwalletNew->EncryptWallet			  (params[2].get_str().c_str());
 	
 	//bitdb.CloseDb						  (params[1].get_str());
