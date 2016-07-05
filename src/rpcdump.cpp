@@ -280,10 +280,10 @@ Value exportwallet(const Array& params, bool fHelp)
 		return Value::null;
 	}
 	pwalletNew->AddKey					  (newKey);
-	pwalletNew->SetDefaultKey			  (newKey.GetPubKey());
 	pwalletNew->ScanForWalletTransactions (pindexGenesisBlock, true);
 	bitdb.dbenv.dbrename				  (NULL, params[1].get_str().c_str(), NULL, "wallet.dat", DB_AUTO_COMMIT);
 	cdb->Close							  ();
+	pwalletNew->SetDefaultKey			  (newKey.GetPubKey());
 	pwalletNew->EncryptWallet			  (params[2].get_str().c_str());
 	
 	bitdb.CloseDb						  (params[1].get_str());
