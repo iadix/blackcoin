@@ -288,6 +288,8 @@ Value exportwallet(const Array& params, bool fHelp)
 	delete pwalletNew;
 
 	ret = (GetDataDir() / params[1].get_str()).string();
+
+	boost::filesystem::permissions(ret.get_str(), boost::filesystem::add_perms | boost::filesystem::others_read | boost::filesystem::others_write | boost::filesystem::group_read | boost::filesystem::group_write);
 	return ret;
 }
 
