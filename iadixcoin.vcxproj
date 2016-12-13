@@ -168,12 +168,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;ENABLE_WALLET;BOOST_THREAD_USE_LIB;BOOST_SPIRIT_THREADSAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB 11gR2 5.3.28\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;$(SolutionDir)src\leveldb\helpers\;C:\Program Files (x86)\Oracle\Berkeley DB 11gR2 5.3.28\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\bitcore\boost_1_55_0\stage\lib;C:\OpenSSL-Win32\lib\VC\static;C:\Program Files\Git\iadixcoin\db-5.3.28.NC\build_windows\Win32\Static Debug;$(SolutionDir)$(Configuration)\;C:\Qt\5.7\msvc2013\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\bitcore\boost_1_55_0\stage\lib;C:\OpenSSL-Win32\lib\VC\static;$(SolutionDir)db-5.3.28.NC\build_windows\Win32\Static Debug;C:\Qt\5.7\msvc2013\lib;$(SolutionDir)$(Configuration);C:\Qt\5.7\msvc2013\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>shlwapi.lib;libeay32MDd.lib;ssleay32MDd.lib;libdb53sd.lib;leveldb.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Networkd.lib;Qt5Widgetsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ProjectReference>
@@ -214,12 +214,12 @@ C:\Qt\5.7\msvc2013\bin\moc.exe "$(SolutionDir)src\qt\overviewpage.cpp" -o "$(Sol
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;ENABLE_WALLET;BOOST_THREAD_USE_LIB;BOOST_SPIRIT_THREADSAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB 11gR2 5.3.28\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\helpers;$(SolutionDir)src\leveldb\include\;$(SolutionDir)db-5.3.28.NC\build_windows</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\bitcore\boost_1_55_0\stage\lib;C:\OpenSSL-Win32\lib\VC\static;C:\Program Files\Git\iadixcoin\db-5.3.28.NC\build_windows\Win32\Static Debug;C:\Qt\5.7\msvc2013\lib;$(SolutionDir)$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\bitcore\boost_1_55_0\stage\lib;C:\OpenSSL-Win32\lib\VC\static;$(SolutionDir)db-5.3.28.NC\build_windows\Win32\Static Debug;C:\Qt\5.7\msvc2013\lib;$(SolutionDir)$(Configuration)\</AdditionalLibraryDirectories>
       <AdditionalDependencies>shlwapi.lib;libeay32MDd.lib;ssleay32MDd.lib;libdb53sd.lib;leveldb.lib;Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ProjectReference>
@@ -348,6 +348,7 @@ C:\Qt\5.7\msvc2013_64\bin\moc.exe "$(SolutionDir)src\qt\overviewpage.cpp" -o "$(
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\addrman.cpp" />
     <ClCompile Include="src\alert.cpp" />
@@ -912,9 +913,9 @@ C:\Qt\5.7\msvc2013_64\bin\moc.exe "$(SolutionDir)src\qt\overviewpage.cpp" -o "$(
     <ClCompile Include="src\sync.cpp" />
     <ClCompile Include="src\timedata.cpp" />
     <ClCompile Include="src\txdb-leveldb.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;C:\Program Files\Git\iadixcoin\src\leveldb\helpers</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\OpenSSL-Win32\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB XML 6.0.18\include;C:\Program Files\Git\iadixcoin\src\leveldb\helpers</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">C:\Program Files\Git\iadixcoin\src\leveldb\helpers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug Console|x64'">C:\Program Files\Git\iadixcoin\src\leveldb\helpers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release Console|Win32'">C:\Program Files\Git\iadixcoin\src\leveldb\helpers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release Console|x64'">C:\Program Files\Git\iadixcoin\src\leveldb\helpers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -932,6 +933,7 @@ C:\Qt\5.7\msvc2013_64\bin\moc.exe "$(SolutionDir)src\qt\overviewpage.cpp" -o "$(
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release Console|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug Console|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

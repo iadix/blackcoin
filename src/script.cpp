@@ -324,7 +324,6 @@ bool IsLowDERSignature(const valtype &vchSig, bool haveHashType) {
     // one byte shorter when encoded correctly.
     if (!CKey::CheckSignatureElement(S, nLenS, true))
         return error("Non-canonical signature: S value is unnecessarily high");
-
     return true;
 }
 
