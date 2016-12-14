@@ -278,7 +278,7 @@ C:\Qt\5.7\msvc2013\bin\moc.exe "$(SolutionDir)src\qt\overviewpage.cpp" -o "$(Sol
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;ENABLE_WALLET;BOOST_THREAD_USE_LIB;BOOST_SPIRIT_THREADSAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\OpenSSL-Win64\include;C:\local\boost_1_55_0\;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB 11gR2 5.3.28\include\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\OpenSSL-Win64\include;C:\local\boost_1_55_0\;$(SolutionDir)src\leveldb\include\;$(SolutionDir)src\leveldb\helpers\;C:\Program Files (x86)\Oracle\Berkeley DB 11gR2 5.3.28\include\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -322,14 +322,14 @@ C:\Qt\5.7\msvc2013_64\bin\moc.exe "$(SolutionDir)src\qt\overviewpage.cpp" -o "$(
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;ENABLE_WALLET;BOOST_THREAD_USE_LIB;BOOST_SPIRIT_THREADSAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;C:\Program Files (x86)\Oracle\Berkeley DB 11gR2 5.3.28\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\OpenSSL-Win64\include;D:\bitcore\boost_1_55_0;$(SolutionDir)src\leveldb\include\;$(SolutionDir)src\leveldb\helpers\;C:\Program Files (x86)\Oracle\Berkeley DB 11gR2 5.3.28\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\local\boost_1_55_0\lib64-msvc-12.0;C:\OpenSSL-Win64\lib\VC\static;C:\Program Files\Git\iadixcoin\db-5.3.28.NC\build_windows\x64\Static Release;C:\Qt\5.7\msvc2013_64\lib;$(SolutionDir)$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\local\boost_1_55_0\lib64-msvc-12.0;C:\OpenSSL-Win64\lib\VC\static;$(SolutionDir)\db-5.3.28.NC\build_windows\x64\Static Release;C:\Qt\5.7\msvc2013_64\lib;$(SolutionDir)$(Configuration)\</AdditionalLibraryDirectories>
       <AdditionalDependencies>shlwapi.lib;libeay32MD.lib;ssleay32MD.lib;libdb53s.lib;leveldb_c64.lib;Qt5Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -2167,7 +2167,7 @@ C:\Qt\5.7\msvc2013_64\bin\moc.exe "$(SolutionDir)src\qt\overviewpage.cpp" -o "$(
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(SolutionDir)\src\qt
 "C:\Qt\5.7\msvc2013\bin\rcc.exe" -name bitcoin -o "$(SolutionDir)$(Configuration)\GeneratedFiles\qrc__bitcoin.cpp" bitcoin.qrc </Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd C:\Program Files\Git\iadixcoin\src\qt
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(SolutionDir)\src\qt
 "C:\Qt\5.7\msvc2013_64\bin\rcc.exe" -name bitcoin -o "$(SolutionDir)$(Platform)\$(Configuration)\GeneratedFiles\qrc__bitcoin.cpp" bitcoin.qrc </Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release Console|Win32'">cd C:\Program Files\Git\iadixcoin\src\qt
 "C:\Qt\5.7\msvc2013\bin\rcc.exe" -name bitcoin -o "$(SolutionDir)$(Configuration)\GeneratedFiles\qrc__bitcoin.cpp" bitcoin.qrc </Command>
