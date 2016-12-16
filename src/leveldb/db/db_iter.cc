@@ -14,7 +14,7 @@
 #include "util/mutexlock.h"
 #include "util/random.h"
 
-typedef size_t ssize_t ;
+//typedef size_t ssize_t ;
 
 namespace leveldb {
 
